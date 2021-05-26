@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<script>
+    //https://api.covid19api.com/summary
+  async function getCovidApi()
+  {
+      const jsonFormatData= await fetch('https://api.covid19india.org/data.json');
+      const jsFormatData = await jsonFormatData.json();
+
+
+      document.getElementById("g1").innerHTML = jsFormatData.tested[438].totaldosesadministered;
+      document.getElementById("g2").innerHTML = jsFormatData.tested[438].firstdoseadministered;
+      document.getElementById("g3").innerHTML = jsFormatData.tested[438].seconddoseadministered;
+      document.getElementById("g4").innerHTML = jsFormatData.tested[438].testedasof;
+
+
+  }
+  getCovidApi();
+</script>
+<div align="center">
+  <hr>
+        <h1 style="color: red;">💉LIVE VACCINATION STATUS💉</h1>
+  <hr>
+  <div class="ubuntu">
+  <table border="1">
+          <tr style="background-color:orange;">
+              <th style="padding: 10px">TOTAL VACCINATION DOSES</th>
+              <th style="padding:10px">DOSE 1 VACCINATION</th>
+              <th style="padding:10px">DOSE 2 VACCINATION</th>
+              <th style="padding:10px">LAST UPDATED</th>
+          </tr>
+
+          <tr>
+               <td style="padding:10px">
+                  <p id="g1"> </p>
+              </td >
+              <td style="padding:10px">
+                  <p id="g2"> </p>
+              </td >
+              <td style="padding:10px">
+                  <p id="g3"> </p>
+              </td>
+              <td style="padding:10px">
+                  <p id="g4"> </p>
+              </td>
+          </tr>
+</table>
+</div>
+<br>
+  <a href="javascript:location.reload(true)" ><button id="design">REFRESH PAGE</button> </a>
+</div>
+
+{% endblock %}

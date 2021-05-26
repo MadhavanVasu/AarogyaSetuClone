@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+    .col-lg-4 {
+        padding: 12px 12px;
+        background-color: brown;
+        width: 400px;
+        margin: 1% 1%;
+    
+    }
+</style>
+
+<script>
+    //https://api.covid19api.com/summary
+    async function getCovidApi() {
+        const jsonFormatData = await fetch('https://api.covid19india.org/data.json');
+        const jsFormatData = await jsonFormatData.json();
+
+
+        document.getElementById("g1").innerHTML = jsFormatData.statewise[0].confirmed;
+        document.getElementById("g2").innerHTML = jsFormatData.statewise[0].recovered;
+        document.getElementById("g3").innerHTML = jsFormatData.statewise[0].deaths;
+
+
+        document.getElementById("h1").innerHTML = jsFormatData.statewise[32].confirmed;
+        document.getElementById("h2").innerHTML = jsFormatData.statewise[32].recovered;
+        document.getElementById("h3").innerHTML = jsFormatData.statewise[32].deaths;
+        document.getElementById("h4").innerHTML = jsFormatData.statewise[32].lastupdatedtime;
+
+        document.getElementById("i1").innerHTML = jsFormatData.statewise[16].confirmed;
+        document.getElementById("i2").innerHTML = jsFormatData.statewise[16].recovered;
+        document.getElementById("i3").innerHTML = jsFormatData.statewise[16].deaths;
+        document.getElementById("i4").innerHTML = jsFormatData.statewise[16].lastupdatedtime;
+
+        document.getElementById("j1").innerHTML = jsFormatData.statewise[9].confirmed;
+        document.getElementById("j2").innerHTML = jsFormatData.statewise[9].recovered;
+        document.getElementById("j3").innerHTML = jsFormatData.statewise[9].deaths;
+        document.getElementById("j4").innerHTML = jsFormatData.statewise[9].lastupdatedtime;
+
+        document.getElementById("k1").innerHTML = jsFormatData.statewise[21].confirmed;
+        document.getElementById("k2").innerHTML = jsFormatData.statewise[21].recovered;
+        document.getElementById("k3").innerHTML = jsFormatData.statewise[21].deaths;
+        document.getElementById("k4").innerHTML = jsFormatData.statewise[21].lastupdatedtime;
+
+
+    }
+    getCovidApi();
+</script>
+<div align="center">
+    <hr>
+    <h1 style="color: red;">😷COVID-19 LIVE STATUS😷</h1>
+    <hr>
+    <div class="container">
+
+        <div class="row India">
+            <div class="col-lg-4 col-md-4">
+                <h3>Confirmed</h3>
+                <p id="g1"> </p>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <h3>Recovered</h3>
+                <p id="g2"> </p>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <h3>Deaths</h3>
+                <p id="g3"> </p>
+            </div>
+        </div>
+    </div>
+
+    <table border="1">
+        <tr style="background-color:orange;">
+            <th style="padding:10px">STATE</th>
+            <th style="padding: 10px">CONFIRMED</th>
+            <th style="padding:10px">RECOVERED</th>
+            <th style="padding:10px">DEATHS</th>
+            <th style="padding:10px">UPDATED TIME</th>
+        </tr>
+
+        <tr>
+            <td style="padding:10px">
+                <b>TamilNadu</b>
+            </td>
+            <td style="padding:10px">
+                <p id="h1"> </p>
+            </td>
+            <td style="padding:10px">
+                <p id="h2"> </p>
+            </td>
+            <td style="padding:10px">
+                <p id="h3"> </p>
+            </td>
+            <td style="padding:10px">
+                <p id="h4"> </p>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding:10px">
+                <b>Karnataka</b>
+            </td>
+            <td style="padding:10px">
+                <p id="i1"> </p>
+            </td>
+            <td style="padding:10px">
+                <p id="i2"> </p>
+            </td>
+            <td style="padding:10px">
+                <p id="i3"> </p>
+            </td>
+            <td style="padding:10px">
+                <p id="i4"> </p>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding:10px">
+                <b>Delhi</b>
+            </td>
+            <td style="padding:10px">
+                <p id="j1"> </p>
+            </td>
+            <td style="padding:10px">
+                <p id="j2"> </p>
+            </td>
+            <td style="padding:10px">
+                <p id="j3"> </p>
+            </td>
+            <td style="padding:10px">
+                <p id="j4"> </p>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding:10px">
+                <b>Maharasthra</b>
+            </td>
+            <td style="padding:10px">
+                <p id="k1"> </p>
+            </td>
+            <td style="padding:10px">
+                <p id="k2"> </p>
+            </td>
+            <td style="padding:10px">
+                <p id="k3"> </p>
+            </td>
+            <td style="padding:10px">
+                <p id="k4"> </p>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <a href="javascript:location.reload(true)"><button id="design">REFRESH PAGE</button> </a>
+</div>
+<br>
+
+<p>To see live vaccination status <a href="{% url 'vaccine' %}">click here</a></p>
+
+
+{% endblock %}

@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mycont">
+    <h1>Self-Checker</h1>
+    <br>
+    <form method="POST" action="{% url 'checker' %}">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="exampleInputUsername">Cough</label>
+            <div class="input-group mb-3">
+                <select class="custom-select" id="inputGroupSelect02" name="cough">
+                  <option selected >Choose...</option>
+                  <option value="1">Yes</option>
+                  <option value="2">No</option>
+                </select>
+              </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Fever</label>
+            <div class="input-group mb-3">
+                <select class="custom-select" id="inputGroupSelect02" name="fever">
+                  <option selected>Choose...</option>
+                  <option value="1">Yes</option>
+                  <option value="2">No</option>
+                </select>
+              </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Sore Throat</label>
+            <div class="input-group mb-3">
+                <select class="custom-select" id="inputGroupSelect02" name="sore">
+                  <option selected>Choose...</option>
+                  <option value="1">Yes</option>
+                  <option value="2">No</option>
+                </select>
+              </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="Symptom4">Shortness Of Breath</label>
+            <div class="input-group mb-3">
+                <select class="custom-select" id="inputGroupSelect02" name="breath">
+                  <option selected>Choose...</option>
+                  <option value="1">Yes</option>
+                  <option value="2">No</option>
+                </select>
+              </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="Symptom5">Head Ache</label>
+            <div class="input-group mb-3">
+                <select class="custom-select" id="inputGroupSelect02" name="hache">
+                  <option selected>Choose...</option>
+                  <option value="1">Yes</option>
+                  <option value="2">No</option>
+                </select>
+              </div>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">Check</button>
+    </form>
+</div>
+
+{% endblock %}

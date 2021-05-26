@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if result == 0 %}
+
+<h1>You are safe</h1>
+
+{% else %}
+
+<h1>You are likely to have Covid-19</h1>
+
+{% endif %}
+
+{% endblock %}
