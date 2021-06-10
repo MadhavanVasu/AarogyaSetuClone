@@ -21,6 +21,7 @@
 
 
 
+
     <!-- Bootstrap core CSS -->
     <link href="/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
@@ -41,7 +42,7 @@
         }
 
         body {
-            background-color: #efefef;
+            background-color: white;
 
         }
 
@@ -84,7 +85,7 @@
 <body>
 
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
             <div class="container">
                 <a class="navbar-brand" href="{% url 'home' %}">
@@ -98,6 +99,7 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         <a class="nav-link" href="{% url 'cases' %}">COVID-19 STATISTICS</a>
+                        <a class="nav-link" href="{% url 'vaccine' %}">VACCINATION STATUS</a>
                         {% if user.is_authenticated %}
                         {% if request.user.is_superuser %}
                         <a class="nav-link" href="{% url 'signup' %}">SIGN-UP/LOGIN</a>
@@ -138,6 +140,15 @@
         {% endblock %}
 
     </div>
+
+    <footer class="text-muted">
+
+        <div class="container text-center">
+            <hr>
+            <p>Helpline Number : +91-11-23978046</p>
+            <p>Toll Free Number: 1075</p>
+        </div>
+    </footer>
 
 
 

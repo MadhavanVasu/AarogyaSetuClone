@@ -9,7 +9,7 @@
         {
         filter: invert(1);
     }
-    
+
 
 
 </style>
@@ -65,11 +65,11 @@
             <div class="col-md-7">
                 <h2 class="featurette-heading">Coronavirus Self-Checker</h2>
                 <p class="lead">Online, mobile-friendly tool asks a series of questions, and based on the user’s
-                    responses, provides recommended actions and resources .</p>
+                    responses, provides recommended actions and resources.</p>
                 {% if user.is_authenticated %}
                 {% if request.user.is_superuser %}
-                <a class="nav-link" href="{% url 'login' %}"><button type="button" class="btn btn-primary btn-lg">Click
-                        Here</button></a>
+                <a href="{% url 'login' %}"><button type="button" class="btn btn-primary btn-lg">Click
+                        Here>></button></a>
 
                 {% else %}
                 <a href="{% url 'checker' %}"><button type="button" class="btn btn-primary btn-lg">Click
@@ -77,14 +77,13 @@
                 {% endif %}
 
                 {% else %}
-                <a class="nav-link" href="{% url 'login' %}"><button type="button" class="btn btn-primary btn-lg">Click
-                        Here >></button></a>
+                <a href="{% url 'login' %}"><button type="button" class="btn btn-primary btn-lg">Click Here >></button></a>
                 {% endif %}
 
 
             </div>
             <div class="col-md-5">
-                <img src="https://media.giphy.com/media/U6pedZ9GkONjU2xCHl/giphy.gif" height="400" width="400" alt="">
+                <img src="https://media.giphy.com/media/U6pedZ9GkONjU2xCHl/giphy.gif" height="400" width="400" alt="" class="img-fluid" >
             </div>
         </div>
 
@@ -93,34 +92,24 @@
         <div class="row featurette">
             <div class="col-md-7 order-md-2">
                 <h2 class="featurette-heading">Official list of Govt and Private hospitals live bed status(TN). </h2>
-                <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how
-                    this
-                    layout would work with some actual real-world content in place.</p>
-                
+                <p class="lead">To know about the bed availability,click on the link below.
+</p>
+
                 <a href="https://tncovidbeds.tnega.org/"><button type="button" class="btn btn-primary btn-lg">Click
                         Here >></button></a>
             </div>
             <div class="col-md-5 order-md-1">
-                <img src="https://media.giphy.com/media/RIw6pFIuEljc94U4u2/giphy.gif" height="400" width="400" alt="">
+                <img src="https://media.giphy.com/media/RIw6pFIuEljc94U4u2/giphy.gif" height="400" width="400" alt="" class="img-fluid">
             </div>
         </div>
 
     </div>
 
 
-    <!-- /END THE FEATURETTES -->
 
-    </div><!-- /.container -->
 
 </main>
 
-<footer class="text-muted">
-        
-    <div class="container text-center">
-        <hr>
-        <p>Helpline Number : +91-11-23978046</p>
-        <p>Toll Free Number: 1075</p>
-    </div>
-</footer>
+
 
 {% endblock %}

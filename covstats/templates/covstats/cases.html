@@ -2,6 +2,8 @@
 
 {% block content %}
 
+
+
 <style>
     .content1 {
         border-radius: 25px;
@@ -15,6 +17,12 @@
         transition: background-color 0.5s ease;
         background-color: orange;
     }
+    table {
+    border-collapse: collapse;
+    border :None;
+    background-color: white;
+}
+
 </style>
 
 <script>
@@ -270,6 +278,7 @@
     getCovidApi();
 </script>
 <div align="center">
+
     <hr>
     <h1 style="color: red;">😷COVID-19 LIVE STATUS😷</h1>
     <hr>
@@ -907,11 +916,13 @@
         </table>
     </div>
     <br>
-    <a href="javascript:location.reload(true)"><button id="design">REFRESH PAGE</button> </a>
+    <a href="javascript:location.reload(true)" class="btn btn-danger btn-lg">
+      <span class="glyphicon glyphicon-refresh"></span> Refresh
+    </a>
 </div>
 <br>
 
-<p>To see live vaccination status <a href="{% url 'vaccine' %}">click here</a></p>
+<h3>To see live vaccination status <a href="{% url 'vaccine' %}">click here</a></h3>
 
 
 {% endblock %}
