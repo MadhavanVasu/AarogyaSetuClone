@@ -8,9 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.83.1">
-    <link rel = "icon" href = 
-"{% static 'aarogyaicon.png' %}" 
-        type = "image/x-icon">
+    <link rel="icon" href="{% static 'aarogyaicon.png' %}" type="image/x-icon">
     <title>Aarogya Setu | {{ page_title }}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
@@ -38,10 +36,15 @@
 
 
     <style>
-        .mycont {
-            margin-top: 100px;
-            margin-bottom: 100px;
+        nav {
+            background-color: white;
         }
+
+        body {
+            background-color: #efefef;
+
+        }
+
 
         .bd-placeholder-img {
             font-size: 1.125rem;
@@ -49,6 +52,21 @@
             -webkit-user-select: none;
             -moz-user-select: none;
             user-select: none;
+        }
+
+        .ad_footer_block {
+            background-color: #005792;
+        }
+
+        .postion {
+            position: relative;
+            bottom: -82px;
+            width: 100%;
+        }
+
+        .logo {
+            height: 60px;
+            width: 220px;
         }
 
         @media (min-width: 768px) {
@@ -66,22 +84,23 @@
 <body>
 
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-light">
 
             <div class="container">
-                <img src="{% static 'aarogya.png' %}" height="27" alt="AarogyaLogo">
-                <a class="navbar-brand" href="{% url 'home' %}">Aarogya Setu</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                <a class="navbar-brand" href="{% url 'home' %}">
+                    <img src="{% static 'logo.png' %}" height=60 width=220 class="d-inline-block align-top logo" />
+                </a>
+                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-link" href="{% url 'cases' %}">Covid-19 stats</a>
+                        <a class="nav-link" href="{% url 'cases' %}">COVID-19 STATISTICS</a>
                         {% if user.is_authenticated %}
                         {% if request.user.is_superuser %}
-                        <a class="nav-link" href="{% url 'signup' %}">Sign Up/Login</a>
+                        <a class="nav-link" href="{% url 'signup' %}">SIGN-UP/LOGIN</a>
 
                         {% else %}
                         <div class="dropdown">
@@ -104,7 +123,7 @@
 
 
                         {% else %}
-                        <a class="nav-link" href="{% url 'signup' %}">Sign Up/Login</a>
+                        <a class="nav-link" href="{% url 'signup' %}">SIGN-UP/LOGIN</a>
                         {% endif %}
 
                     </div>
@@ -120,16 +139,20 @@
 
     </div>
 
-    
 
-    <footer class="text-muted">
-        
-        <div class="container text-center">
-            <hr>
-            <p>Helpline Number : +91-11-23978046</p>
-            <p>Toll Free Number: 1075</p>
-        </div>
-    </footer>
+
+    <!-- <footer>
+        <div class="postion">
+            <div class="ad_footer_block">
+                <div class="region region-footer">
+                    <div id="block-block-61" class="block block-block">
+                        <div class="content">
+                            <script type="text/javascript"
+                                src="https://www.mygov.in/footer_service/footerservice.js"></script>
+                            <div class="service-footer-wrapper"></div>
+                        </div>
+    </footer> -->
+
 
 
     <script src="/docs/5.0/dist/js/bootstrap.bundle.min.js"

@@ -1,55 +1,97 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<style>
+    
 
-<script>
+  .ubuntu {
+    font-family: 'Ubuntu', sans-serif;
+  }
+
+  #design {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 8px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    font-family: 'Ubuntu', sans-serif;
+  }
+
+  .ad_footer_block {
+    background-color: #005792;
+  }
+
+  .font {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: red;
+  }
+</style>
+
+<h1 style="text-align: center;"><u>ABOUT VACCINATION</u></h1>
+  <div class="font">
+    <p>
+      A COVID‑19 Vaccine Is A Vaccine Intended To Provide Acquired Immunity Against Severe Acute Respiratory Syndrome
+      CORONA VIRUS 2 (SARS‑CoV‑2), The Virus Causing CORONA VIRUS Disease 2019 (COVID‑19).In Phase III Trials, Several
+      COVID‑19 Vaccines Have Demonstrated Efficacy As High As 95% In Preventing Symptomatic COVID‑19 Infections. As Of
+      April 2021, 16 Vaccines Are Authorized By At Least One National Regulatory Authority For Public Use: Two RNA
+      Vaccines (Pfizer–BioNTech And Moderna), Seven Conventional Inactivated Vaccines (BBIBP-CorV, CoronaVac, Covaxin,
+      WIBP-CorV, CoviVac, Minhai-Kangtai and QazVac), Five Viral Vector Vaccines (Sputnik Light, Sputnik V,
+      Oxford–AstraZeneca, Convidecia, and Johnson & Johnson), And Two Protein Subunit Vaccines (EpiVacCorona and
+      RBD-Dimer).In Total, As Of March 2021, 308 Vaccine Candidates Are In Various Stages Of Development, With 73 In
+      Clinical Research, Including 24 In Phase I Trials, 33 In Phase I–II Trials, And 16 In Phase III Development.
+    </p>
+  </div>
+  <h3><em><u>TO KNOW MORE ABOUT VACCINATION,CLICK HERE</u></em></h3>
+  <a href="https://www.cowin.gov.in/faq"><input id="design" type="submit" value="CLICK HERE"></a>
+  <script>
     //https://api.covid19api.com/summary
-  async function getCovidApi()
-  {
-      const jsonFormatData= await fetch('https://api.covid19india.org/data.json');
+
+    async function getCovidApi() {
+      const jsonFormatData = await fetch('https://api.covid19india.org/data.json');
       const jsFormatData = await jsonFormatData.json();
 
+      const d=jsFormatData.tested.length-1;
+      document.getElementById("g1").innerHTML = jsFormatData.tested[d].totaldosesadministered;
+      document.getElementById("g2").innerHTML = jsFormatData.tested[d].firstdoseadministered;
+      document.getElementById("g3").innerHTML = jsFormatData.tested[d].seconddoseadministered;
+      document.getElementById("g4").innerHTML = jsFormatData.tested[d].updatetimestamp;
+    }
+    getCovidApi();
+  </script>
+  <div align="center">
+    <hr>
+    <h1 style="color: red;">💉VACCINATION STATUS💉</h1>
+    <hr>
+    <div class="ubuntu" style='overflow-x:auto'>
+      <table border="1">
+        <tr style="background-color:orange;">
+          <th style="padding: 10px">TOTAL VACCINATION DOSES</th>
+          <th style="padding:10px">DOSE 1 VACCINATION</th>
+          <th style="padding:10px">DOSE 2 VACCINATION</th>
+          <th style="padding:10px">LAST UPDATED</th>
+        </tr>
 
-      document.getElementById("g1").innerHTML = jsFormatData.tested[438].totaldosesadministered;
-      document.getElementById("g2").innerHTML = jsFormatData.tested[438].firstdoseadministered;
-      document.getElementById("g3").innerHTML = jsFormatData.tested[438].seconddoseadministered;
-      document.getElementById("g4").innerHTML = jsFormatData.tested[438].testedasof;
-
-
-  }
-  getCovidApi();
-</script>
-<div align="center">
-  <hr>
-        <h1 style="color: red;">💉LIVE VACCINATION STATUS💉</h1>
-  <hr>
-  <div class="ubuntu">
-  <table border="1">
-          <tr style="background-color:orange;">
-              <th style="padding: 10px">TOTAL VACCINATION DOSES</th>
-              <th style="padding:10px">DOSE 1 VACCINATION</th>
-              <th style="padding:10px">DOSE 2 VACCINATION</th>
-              <th style="padding:10px">LAST UPDATED</th>
-          </tr>
-
-          <tr>
-               <td style="padding:10px">
-                  <p id="g1"> </p>
-              </td >
-              <td style="padding:10px">
-                  <p id="g2"> </p>
-              </td >
-              <td style="padding:10px">
-                  <p id="g3"> </p>
-              </td>
-              <td style="padding:10px">
-                  <p id="g4"> </p>
-              </td>
-          </tr>
-</table>
-</div>
-<br>
-  <a href="javascript:location.reload(true)" ><button id="design">REFRESH PAGE</button> </a>
-</div>
+        <tr>
+          <td style="padding:10px">
+            <p id="g1"> </p>
+          </td>
+          <td style="padding:10px">
+            <p id="g2"> </p>
+          </td>
+          <td style="padding:10px">
+            <p id="g3"> </p>
+          </td>
+          <td style="padding:10px">
+            <p id="g4"> </p>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <br>
+    <a href="javascript:location.reload(true)"><button id="design">REFRESH PAGE</button> </a>
+  </div>
 
 {% endblock %}

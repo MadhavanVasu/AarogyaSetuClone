@@ -2,40 +2,50 @@
 
 {% block content %}
 
-
+<style>
+  #error{
+    color: red;
+  }
+</style>
 
 
 <div class="container mycont">
-    <h1>Sign-Up</h1>
-    <br>
-    {% if error %}
-        {{ error }}
-        <br />
-        <br />
-    {% endif %}
-    <form method="POST" action="{% url 'signup' %}">
-        {% csrf_token %}
-        <div class="form-group">
-            <label for="exampleInputUsername">Username</label>
-            <input type="text" class="form-control" id="exampleInputUsername" aria-describedby="emailHelp"
-                placeholder="Enter Username" name="username">
-        </div>
-        <br>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"
-                name="password1">
-        </div>
-        <br>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Re-enter Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"
-                name="password2">
-        </div>
-        <br>
-        <p>Already have an account? <a href="{% url 'login' %}">Sign in</a></p>
-        <button type="submit" class="btn btn-primary">Register</button>
-    </form>
+  <br>
+  <h1>Sign-Up</h1>
+  <br>
+  {% if error %}
+  <div class="alert alert-danger" role="alert">
+    {{ error }}
+  </div>
+  {% endif %}
+  <form method="POST" action="{% url 'signup' %}">
+    {% csrf_token %}
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+      <label class="form-label" for="form3Example3">Username</label>
+      <input type="text" id="form3Example3" class="form-control" name="username" required />
+
+    </div>
+
+    <!-- Password input -->
+    <div class="form-outline mb-4">
+      <label class="form-label" for="form3Example4">Password</label>
+      <input type="password" id="form3Example4" class="form-control" name="password1" required />
+
+    </div>
+
+    <div class="form-outline mb-4">
+      <label class="form-label" for="form3Example4">Re-enter Password</label>
+      <input type="password" id="form3Example4" class="form-control" name="password2" required />
+
+    </div>
+
+    <p>Already have an account? <a href="{% url 'login' %}">Sign in</a></p>
+
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-primary btn-block mb-4">Sign up</button>
+  </form>
+
 </div>
 
 

@@ -2,68 +2,76 @@
 
 {% block content %}
 
-<div class="container mycont">
-    <h1>Self-Checker</h1>
-    <br>
-    <form method="POST" action="{% url 'checker' %}">
-        {% csrf_token %}
-        <div class="form-group">
-            <label for="exampleInputUsername">Cough</label>
-            <div class="input-group mb-3">
-                <select class="custom-select" id="inputGroupSelect02" name="cough">
-                  <option selected >Choose...</option>
-                  <option value="1">Yes</option>
-                  <option value="2">No</option>
-                </select>
-              </div>
-        </div>
-        <br>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Fever</label>
-            <div class="input-group mb-3">
-                <select class="custom-select" id="inputGroupSelect02" name="fever">
-                  <option selected>Choose...</option>
-                  <option value="1">Yes</option>
-                  <option value="2">No</option>
-                </select>
-              </div>
-        </div>
-        <br>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Sore Throat</label>
-            <div class="input-group mb-3">
-                <select class="custom-select" id="inputGroupSelect02" name="sore">
-                  <option selected>Choose...</option>
-                  <option value="1">Yes</option>
-                  <option value="2">No</option>
-                </select>
-              </div>
-        </div>
-        <br>
-        <div class="form-group">
-            <label for="Symptom4">Shortness Of Breath</label>
-            <div class="input-group mb-3">
-                <select class="custom-select" id="inputGroupSelect02" name="breath">
-                  <option selected>Choose...</option>
-                  <option value="1">Yes</option>
-                  <option value="2">No</option>
-                </select>
-              </div>
-        </div>
-        <br>
-        <div class="form-group">
-            <label for="Symptom5">Head Ache</label>
-            <div class="input-group mb-3">
-                <select class="custom-select" id="inputGroupSelect02" name="hache">
-                  <option selected>Choose...</option>
-                  <option value="1">Yes</option>
-                  <option value="2">No</option>
-                </select>
-              </div>
-        </div>
-        <br>
-        <button type="submit" class="btn btn-primary">Check</button>
-    </form>
-</div>
+<center>
+  <div>
+      <h1><u><b>COVID-19 CHECKER</b></u></h1><br>
+  </div>
+  <div style="color:#03256c;">
+      <h4><b><u>PLEASE FILL IN YOUR RESPONSE TO RECEIVE THE REPORT</u></b></h4>
+  </div>
+
+  <form action="{% url 'checker' %}" method="POST">
+      {% csrf_token %}
+      <div>
+          <div class="form-group col-md-4">
+              <label for="inputState"><b>COUGH</b></label>
+              <select id="inputState" class="form-control" name="cough">
+                  <option selected>CHOOSE...</option>
+                  <option>YES</option>
+                  <option>NO</option>
+              </select>
+              <br>
+          </div>
+          <div class="form-group col-md-4">
+              <label for="inputState"><b>FEVER</b></label>
+              <select id="inputState" class="form-control" name="fever">
+                  <option selected>CHOOSE...</option>
+                  <option>YES</option>
+                  <option>NO</option>
+              </select>
+              <br>
+          </div>
+
+          <div class="form-group col-md-4">
+              <label for="inputState"><b>SORE THROAT</b></label>
+              <select id="inputState" class="form-control" name="sore">
+                  <option selected>CHOOSE...</option>
+                  <option>YES</option>
+                  <option>NO</option>
+              </select>
+              <br>
+          </div>
+
+          <div class="form-group col-md-4">
+              <label for="inputState"><b>SHORTNESS OF BREATH</b></label>
+              <select id="inputState" class="form-control" name="short">
+                  <option selected>CHOOSE...</option>
+                  <option>YES</option>
+                  <option>NO</option>
+              </select>
+              <br>
+          </div>
+
+          <div class="form-group col-md-4">
+              <label for="inputState"><b>HEADACHE</b></label>
+              <select id="inputState" class="form-control" name="head">
+                  <option selected>CHOOSE...</option>
+                  <option>YES</option>
+                  <option>NO</option>
+              </select>
+              <br>
+          </div>
+      </div>
+
+      <div style="color:black">
+          <h5><b><u>TO RECIEVE A COPY OF THE RESULT,PLEASE ENTER THE PHONE NUMBER</u></b></h5>
+      </div>
+      <div class="form-group col-md-4">
+          <label for="inputState"><b>PHONE NUMBER</b></label>
+          <input type="text" id="inputState" class="form-control" name="number">
+      </div>
+      <input style="margin-top: 10px; margin-bottom: 10px;" class="btn btn-primary" type="submit" value="CHECK NOW" />
+  </form>
+</center>
 
 {% endblock %}
