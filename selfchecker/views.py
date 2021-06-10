@@ -33,12 +33,12 @@ def checkform(request):
         for i in range(5):
             temp = ''
             if(l[i]==0):
-                temp = '\2t' + s[i]+ ' : ' + 'No'
+                temp = s[i]+ ' : ' + 'No'
             else:
-                temp = '\2t' + s[i]+ ' : ' + 'Yes'
+                temp = s[i]+ ' : ' + 'Yes'
             temp+='\n'
             msg+=temp
-        msg+='\n\n'
+        msg+='\n'
         if(r==0):
             temp = 'THE PROBABILITY THAT YOU HAVE CONTRACTED THE VIRUS IS LOW!!BUT,PLEASE MAINTAIN SOCIAL DISTANCING AND FOLLOW OTHER COVID-19 PROTOCOLS!!GET VACCINATED AS SOON AS POSSIBLE'
             msg+=temp
