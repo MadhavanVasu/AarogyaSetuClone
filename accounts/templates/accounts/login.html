@@ -40,7 +40,7 @@
   input {
     width: 100%;
     padding: 12px;
-    border: 1px solid #ccc;
+    border: 1px solid black;
     border-radius: 4px;
     box-sizing: border-box;
     margin-top: 6px;
@@ -125,10 +125,10 @@
       <form method="POST" action="{% url 'login' %}">
         {% csrf_token %}
         <label for="usrname">USERNAME</label>
-        <input class="bg-dark text-white" type="text" id="usrname" name="username" required>
+        <input class="bg-light" type="text" id="usrname" name="username" required>
 
         <label for="psw">PASSWORD</label>
-        <input class="bg-dark text-white" type="password" id="psw" name="password"
+        <input class="bg-light" type="password" id="psw" name="password"
           pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
           title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
           required>

@@ -33,20 +33,20 @@ def checkform(request):
         for i in range(5):
             temp = ''
             if(l[i]==0):
-                temp = '\3t' + s[i]+ ' : ' + 'No'
+                temp = '\2t' + s[i]+ ' : ' + 'No'
             else:
-                temp = '\3t' + s[i]+ ' : ' + 'Yes'
+                temp = '\2t' + s[i]+ ' : ' + 'Yes'
             temp+='\n'
             msg+=temp
-        msg+='\n'
+        msg+='\n\n'
         if(r==0):
             temp = 'THE PROBABILITY THAT YOU HAVE CONTRACTED THE VIRUS IS LOW!!BUT,PLEASE MAINTAIN SOCIAL DISTANCING AND FOLLOW OTHER COVID-19 PROTOCOLS!!GET VACCINATED AS SOON AS POSSIBLE'
             msg+=temp
-        
+
         else:
             temp = 'PLEASE VISIT THE NEARBY HOSPITAL AND TAKE A COVID-19 TEST IMMEDIATELY!!STAY SAFE!!'
             msg+=temp
-        
+
         querystring = {"authorization": "ECrz5SXvjdxTeWFRZOaBNQfuwLYmKt2b7MoIk0c89J1Psgh6yV8a4P5gNlwoAi9KWrGdOM2vZCXq3Ucn", "sender_id": "TXTIND", "message": msg, "route": "v3", "numbers": data}
 
         headers = {
@@ -62,4 +62,3 @@ def checkform(request):
 
     else:
         return render(request, 'selfchecker/myform.html',{'page_title':'Self-Checker'})
-
