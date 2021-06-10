@@ -79,13 +79,14 @@ WSGI_APPLICATION = 'myaarogya.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'asclonedb',
-        'USER': 'postgres',
-        'PASSWORD': 'jackie',
-        'HOST': 'localhost',
+        'NAME': 'd2b2s0mpg4r14e',
+        'USER': 'efjanvsbnzkegr',
+        'PASSWORD': '4e19d6dcf3d18c1cf2e9c45f0be3c89c25e84729122ada6b6a74e60028889dcd',
+        'HOST': 'ec2-3-226-134-153.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
+
 
 
 # Password validation
